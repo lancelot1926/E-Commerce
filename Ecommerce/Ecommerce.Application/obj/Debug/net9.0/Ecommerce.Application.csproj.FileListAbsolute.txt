@@ -1,0 +1,16 @@
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\bin\Debug\net9.0\Ecommerce.Application.deps.json
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\bin\Debug\net9.0\Ecommerce.Application.dll
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\bin\Debug\net9.0\Ecommerce.Application.pdb
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\bin\Debug\net9.0\Ecommerce.Domain.dll
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\bin\Debug\net9.0\Ecommerce.Domain.pdb
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.csproj.AssemblyReference.cache
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.AssemblyInfoInputs.cache
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.AssemblyInfo.cs
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.csproj.CoreCompileInputs.cache
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.sourcelink.json
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\obj\Debug\net9.0\Ecommerc.C5F54E74.Up2Date
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.dll
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\obj\Debug\net9.0\refint\Ecommerce.Application.dll
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\obj\Debug\net9.0\Ecommerce.Application.pdb
+C:\projects\E-Commerce\E-Commerce\Ecommerce\Ecommerce.Application\obj\Debug\net9.0\ref\Ecommerce.Application.dll
