@@ -1,7 +1,10 @@
-﻿using Ecommerce.Infrastructure;
+﻿using Ecommerce.Domain.Entities;
+using Ecommerce.Infrastructure;
 using Ecommerce.Infrastructure.Auth;
+using Ecommerce.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -96,8 +99,19 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        policy => policy
+            .WithOrigins("http://localhost:3000") // React dev server
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
 var app = builder.Build();
 
+app.UseStaticFiles();
+app.UseCors("AllowReactApp");
 app.UseSwagger();
 app.UseSwaggerUI();
 

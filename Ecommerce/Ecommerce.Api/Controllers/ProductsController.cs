@@ -33,7 +33,7 @@ public class ProductsController : ControllerBase
         return Ok(result.Data);
     }
 
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateProductRequest req, CancellationToken ct)
     {
@@ -43,7 +43,7 @@ public class ProductsController : ControllerBase
         return CreatedAtAction(nameof(Get), new { id = result.Data!.Id }, result.Data);
     }
 
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [HttpPut("{id:int}")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateProductRequest req, CancellationToken ct)
     {
@@ -53,12 +53,19 @@ public class ProductsController : ControllerBase
         return Ok(result.Data);
     }
 
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> Delete(int id, CancellationToken ct)
     {
         var result = await _products.DeleteAsync(id, ct);
         if (!result.Succeeded) return BadRequest(result.Error);
         return NoContent();
+    }
+
+    [HttpGet("paged")]
+    public async Task<IActionResult> GetPaged([FromQuery] ProductQueryParameters parameters, CancellationToken ct)
+    {
+        var result = await _products.GetPagedAsync(parameters, ct);
+        return Ok(result.Data);
     }
 }

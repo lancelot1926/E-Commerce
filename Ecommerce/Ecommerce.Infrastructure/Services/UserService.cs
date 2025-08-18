@@ -38,6 +38,7 @@ public class UserService : IUserService
             Surname = r.Surname,
             Email = r.Email,
             PhoneNumber = r.PhoneNumber,
+            Role="User",
             Address = (r.AddressLine1 is null && r.City is null) ? null : new Address
             {
                 Line1 = r.AddressLine1 ?? string.Empty,

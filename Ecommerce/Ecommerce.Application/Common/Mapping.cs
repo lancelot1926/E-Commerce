@@ -8,6 +8,9 @@ using Ecommerce.Application.DTOs.Products;
 using Ecommerce.Application.DTOs.Users;
 using Ecommerce.Domain.Entities;
 using Ecommerce.Domain.ValueObjects;
+using Ecommerce.Application.DTOs.Cart;
+using Ecommerce.Application.DTOs.Orders;
+
 
 namespace Ecommerce.Application.Common;
 
@@ -57,5 +60,33 @@ public static class Mapping
             PostalCode = r.PostalCode ?? string.Empty,
             Country = r.Country ?? string.Empty
         }
+    };
+
+    public static CartDto ToDto(this Ecommerce.Domain.Entities.Cart cart, IReadOnlyList<(string Name, int ProductId, decimal Price, int Qty)> rows)
+        => new()
+        {
+            UserId = cart.UserId,
+            Items = rows.Select(r => new CartItemDto
+            {
+                ProductId = r.ProductId,
+                Name = r.Name,
+                UnitPrice = r.Price,
+                Quantity = r.Qty
+            }).ToList()
+        };
+
+    public static OrderDto ToDto(this Ecommerce.Domain.Entities.Order o) => new()
+    {
+        Id = o.Id,
+        UserId = o.UserId,
+        Status = o.Status,
+        Total = o.Total,
+        Items = o.Items.Select(i => new OrderItemDto
+        {
+            ProductId = i.ProductId,
+            ProductName = i.ProductName,
+            UnitPrice = i.UnitPrice,
+            Quantity = i.Quantity
+        }).ToList()
     };
 }

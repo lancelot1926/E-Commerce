@@ -40,4 +40,5 @@ public class User : BaseEntity
         Address = address;
         UpdatedAt = DateTime.UtcNow;
     }
+    public string Role { get; set; } = "User"; // default role
 }

@@ -42,4 +42,56 @@ public class ProductRepository : IProductRepository
         _db.Products.Remove(p);
         await _db.SaveChangesAsync(ct);
     }
+    public async Task<(IReadOnlyList<Product> Items, int TotalCount)> GetPagedAsync(
+    int pageNumber,
+    int pageSize,
+    string? search,
+    string? category,
+    string? brand,
+    string? sortBy,
+    string? sortOrder,
+    decimal? minPrice,
+    decimal? maxPrice,
+    bool? isActive,
+    CancellationToken ct = default)
+    {
+        var query = _db.Products.AsNoTracking().AsQueryable();
+
+        // Filtering
+        if (!string.IsNullOrWhiteSpace(search))
+            query = query.Where(p => p.Name.Contains(search) || (p.Description != null && p.Description.Contains(search)));
+
+        if (!string.IsNullOrWhiteSpace(category))
+            query = query.Where(p => p.Category == category);
+
+        if (!string.IsNullOrWhiteSpace(brand))
+            query = query.Where(p => p.Brand == brand);
+
+        // Price range
+        if (minPrice.HasValue) query = query.Where(p => p.Price >= minPrice.Value);
+        if (maxPrice.HasValue) query = query.Where(p => p.Price <= maxPrice.Value);
+
+        // Active flag
+        if (isActive.HasValue) query = query.Where(p => p.IsActive == isActive.Value);
+
+        // Sorting
+        bool desc = (sortOrder ?? "asc").Equals("desc", StringComparison.OrdinalIgnoreCase);
+        query = (sortBy ?? "").ToLower() switch
+        {
+            "name" => desc ? query.OrderByDescending(p => p.Name) : query.OrderBy(p => p.Name),
+            "price" => desc ? query.OrderByDescending(p => p.Price) : query.OrderBy(p => p.Price),
+            _ => query.OrderBy(p => p.Id) // default stable sort
+        };
+
+
+        var totalCount = await query.CountAsync(ct);
+
+        var items = await query
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync(ct);
+
+        return (items, totalCount);
+    }
+
 }

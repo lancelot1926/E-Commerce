@@ -3,217 +3,47 @@
   "WorkspaceRootPath": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.infrastructure\\auth\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\auth\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4223EA48-8444-4F1F-BB4C-A5C2FD7C4300}|Ecommerce.Application\\Ecommerce.Application.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.application\\dtos\\cart\\addcartitemrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4223EA48-8444-4F1F-BB4C-A5C2FD7C4300}|Ecommerce.Application\\Ecommerce.Application.csproj|solutionrelative:ecommerce.application\\dtos\\cart\\addcartitemrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0EE2322F-16F3-4F5A-8401-8D3F24DBE085}|Ecommerce.Api\\Ecommerce.Api.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EE2322F-16F3-4F5A-8401-8D3F24DBE085}|Ecommerce.Api\\Ecommerce.Api.csproj|solutionrelative:ecommerce.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EE2322F-16F3-4F5A-8401-8D3F24DBE085}|Ecommerce.Api\\Ecommerce.Api.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0EE2322F-16F3-4F5A-8401-8D3F24DBE085}|Ecommerce.Api\\Ecommerce.Api.csproj|solutionrelative:ecommerce.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Persistence\\Migrations\\20250810010120_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Ecommerce.Infrastructure\\Persistence\\Migrations\\20250810010120_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EE2322F-16F3-4F5A-8401-8D3F24DBE085}|Ecommerce.Api\\Ecommerce.Api.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0EE2322F-16F3-4F5A-8401-8D3F24DBE085}|Ecommerce.Api\\Ecommerce.Api.csproj|solutionrelative:ecommerce.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.infrastructure\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.infrastructure\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.infrastructure\\auth\\jwttokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\auth\\jwttokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.infrastructure\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD7314DE-A66C-4340-BB70-DA3717FA3E5B}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A95AC53-06C5-41C0-9A04-BA7869C563D5}|Ecommerce.Domain\\Ecommerce.Domain.csproj|c:\\projects\\e-commerce\\e-commerce\\ecommerce\\ecommerce.domain\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A95AC53-06C5-41C0-9A04-BA7869C563D5}|Ecommerce.Domain\\Ecommerce.Domain.csproj|solutionrelative:ecommerce.domain\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 179,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Api\\Program.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Api\\Program.cs",
-              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Api\\Program.cs",
-              "RelativeToolTip": "Ecommerce.Api\\Program.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAkwF8AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T01:26:47.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Api\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "Ecommerce.Api\\appsettings.Development.json",
-              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Api\\appsettings.Development.json",
-              "RelativeToolTip": "Ecommerce.Api\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-10T01:24:42.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "20250810010120_InitialCreate.cs",
-              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Persistence\\Migrations\\20250810010120_InitialCreate.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\Persistence\\Migrations\\20250810010120_InitialCreate.cs",
-              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Persistence\\Migrations\\20250810010120_InitialCreate.cs",
-              "RelativeToolTip": "Ecommerce.Infrastructure\\Persistence\\Migrations\\20250810010120_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T01:01:21.081Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Api\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Api\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Api\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Ecommerce.Api\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T00:44:54.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\DependencyInjection\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\DependencyInjection\\DependencyInjection.cs",
-              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\DependencyInjection\\DependencyInjection.cs",
-              "RelativeToolTip": "Ecommerce.Infrastructure\\DependencyInjection\\DependencyInjection.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAIBJwBIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T19:57:14.406Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\Services\\UserService.cs",
-              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Services\\UserService.cs",
-              "RelativeToolTip": "Ecommerce.Infrastructure\\Services\\UserService.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAcwE0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T19:56:34.97Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\Services\\ProductService.cs",
-              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Services\\ProductService.cs",
-              "RelativeToolTip": "Ecommerce.Infrastructure\\Services\\ProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T19:56:02.335Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "JwtTokenGenerator.cs",
-              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Auth\\JwtTokenGenerator.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\Auth\\JwtTokenGenerator.cs",
-              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Auth\\JwtTokenGenerator.cs",
-              "RelativeToolTip": "Ecommerce.Infrastructure\\Auth\\JwtTokenGenerator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T19:55:30.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "JwtSettings.cs",
-              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Auth\\JwtSettings.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\Auth\\JwtSettings.cs",
-              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Auth\\JwtSettings.cs",
-              "RelativeToolTip": "Ecommerce.Infrastructure\\Auth\\JwtSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Title": "AddCartItemRequest.cs",
+              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Application\\DTOs\\Cart\\AddCartItemRequest.cs",
+              "RelativeDocumentMoniker": "Ecommerce.Application\\DTOs\\Cart\\AddCartItemRequest.cs",
+              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Application\\DTOs\\Cart\\AddCartItemRequest.cs",
+              "RelativeToolTip": "Ecommerce.Application\\DTOs\\Cart\\AddCartItemRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T19:55:03.621Z",
+              "WhenOpened": "2025-08-17T12:55:33.014Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "Ecommerce.Infrastructure\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Domain\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "Ecommerce.Domain\\Entities\\Product.cs",
+              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Domain\\Entities\\Product.cs",
+              "RelativeToolTip": "Ecommerce.Domain\\Entities\\Product.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T19:54:27.376Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Repositories\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\Repositories\\ProductRepository.cs",
-              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Repositories\\ProductRepository.cs",
-              "RelativeToolTip": "Ecommerce.Infrastructure\\Repositories\\ProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T19:53:59.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Persistence\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\Persistence\\AppDbContext.cs",
-              "ToolTip": "C:\\projects\\E-Commerce\\E-Commerce\\Ecommerce\\Ecommerce.Infrastructure\\Persistence\\AppDbContext.cs",
-              "RelativeToolTip": "Ecommerce.Infrastructure\\Persistence\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T19:53:14.384Z",
+              "WhenOpened": "2025-08-17T12:37:07.294Z",
               "EditorCaption": ""
             }
           ]

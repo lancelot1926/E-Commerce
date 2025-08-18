@@ -16,4 +16,6 @@ public interface IProductService
     Task<Result> DeleteAsync(int id, CancellationToken ct = default);
     Task<Result<ProductDto>> GetAsync(int id, CancellationToken ct = default);
     Task<Result<IReadOnlyList<ProductDto>>> GetAllAsync(CancellationToken ct = default);
+    Task<Result<PagedResponse<ProductDto>>> GetPagedAsync(ProductQueryParameters parameters, CancellationToken ct = default);
+
 }

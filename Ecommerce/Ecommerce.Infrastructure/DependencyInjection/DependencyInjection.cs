@@ -34,6 +34,8 @@ public static class DependencyInjection
         // Services
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<IUserService, UserService>();
+        services.AddScoped<ICartService, CartService>();
+        services.AddScoped<IOrderService, OrderService>();
 
         // Password hasher
         services.AddScoped<PasswordHasher<User>>();
@@ -41,6 +43,7 @@ public static class DependencyInjection
         // JWT
         services.Configure<JwtSettings>(config.GetSection("Jwt"));
         services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+
 
         return services;
     }

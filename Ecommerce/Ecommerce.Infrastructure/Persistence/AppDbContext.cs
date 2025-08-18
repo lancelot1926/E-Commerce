@@ -16,6 +16,11 @@ public class AppDbContext : DbContext
 
     public DbSet<Product> Products => Set<Product>();
     public DbSet<User> Users => Set<User>();
+    public DbSet<Cart> Carts => Set<Cart>();
+    public DbSet<CartItem> CartItems => Set<CartItem>();
+    public DbSet<Order> Orders => Set<Order>();
+    public DbSet<OrderItem> OrderItems => Set<OrderItem>();
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -42,6 +47,7 @@ public class AppDbContext : DbContext
             b.Property(u => u.PasswordHash).IsRequired();
 
             b.HasIndex(u => u.Email).IsUnique();
+            b.Property(u => u.Role).HasMaxLength(50).IsRequired().HasDefaultValue("User");
 
             // Address as owned (same table)
             b.OwnsOne(u => u.Address, adr =>
@@ -53,6 +59,32 @@ public class AppDbContext : DbContext
                 adr.Property(a => a.PostalCode).HasMaxLength(20).HasColumnName("Address_PostalCode");
                 adr.Property(a => a.Country).HasMaxLength(100).HasColumnName("Address_Country");
             });
+        });
+
+        // Cart
+        modelBuilder.Entity<Cart>(b =>
+        {
+            b.HasIndex(c => c.UserId).IsUnique(); // one cart per user
+            b.HasMany<CartItem>().WithOne().HasForeignKey(ci => ci.CartId).OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<CartItem>(b =>
+        {
+            b.HasIndex(ci => new { ci.CartId, ci.ProductId }).IsUnique();
+            b.Property(ci => ci.UnitPrice).HasColumnType("decimal(18,2)");
+        });
+
+        // Order
+        modelBuilder.Entity<Order>(b =>
+        {
+            b.Property(o => o.Total).HasColumnType("decimal(18,2)");
+            b.HasMany<OrderItem>().WithOne(oi => oi.Order).HasForeignKey(oi => oi.OrderId).OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<OrderItem>(b =>
+        {
+            b.Property(oi => oi.UnitPrice).HasColumnType("decimal(18,2)");
+            b.Property(oi => oi.ProductName).HasMaxLength(200);
         });
 
         base.OnModelCreating(modelBuilder);

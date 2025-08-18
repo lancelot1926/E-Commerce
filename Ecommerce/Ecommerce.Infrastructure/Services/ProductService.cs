@@ -76,4 +76,28 @@ public class ProductService : IProductService
         await _repo.UpdateAsync(entity, ct);
         return Result<ProductDto>.Ok(entity.ToDto());
     }
+    public async Task<Result<PagedResponse<ProductDto>>> GetPagedAsync(ProductQueryParameters parameters, CancellationToken ct = default)
+    {
+        var (items, total) = await _repo.GetPagedAsync(
+            parameters.PageNumber,
+            parameters.PageSize,
+            parameters.Search,
+            parameters.Category,
+            parameters.Brand,
+            parameters.SortBy,
+            parameters.SortOrder,
+            parameters.MinPrice,
+            parameters.MaxPrice,
+            parameters.IsActive,
+            ct);
+
+        var dto = new PagedResponse<ProductDto>
+        {
+            Items = items.Select(p => p.ToDto()).ToList(),
+            TotalCount = total
+        };
+
+        return Result<PagedResponse<ProductDto>>.Ok(dto);
+    }
+
 }
