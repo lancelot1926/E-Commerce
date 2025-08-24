@@ -48,6 +48,7 @@ public class AppDbContext : DbContext
 
             b.HasIndex(u => u.Email).IsUnique();
             b.Property(u => u.Role).HasMaxLength(50).IsRequired().HasDefaultValue("User");
+            b.Property(u => u.IsBanned);
 
             // Address as owned (same table)
             b.OwnsOne(u => u.Address, adr =>

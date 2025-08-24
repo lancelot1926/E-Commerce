@@ -31,7 +31,9 @@ public class JwtTokenGenerator : IJwtTokenGenerator
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new Claim(JwtRegisteredClaimNames.Email, user.Email),
             new Claim("name", $"{user.Name} {user.Surname}".Trim()),
-            new Claim(ClaimTypes.Role, user.Role) // <-- role claim
+            new Claim(ClaimTypes.Role, user.Role), // <-- role claim
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim("tv", user.TokenVersion.ToString())
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_settings.Key));

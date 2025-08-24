@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
-import { getRoleFromToken } from "../auth/token";
+import { getRoleFromToken ,getToken} from "../auth/token";
 
 export default function ProtectedRoute({ children, requireAdmin = false }) {
   const { isLoggedIn } = useAuth();
@@ -10,5 +10,5 @@ export default function ProtectedRoute({ children, requireAdmin = false }) {
     const role = getRoleFromToken();
     if (role !== "Admin") return <Navigate to="/" replace />;
   }
-  return children;
+  return getToken() ? children : <Navigate to="/login" replace />;
 }

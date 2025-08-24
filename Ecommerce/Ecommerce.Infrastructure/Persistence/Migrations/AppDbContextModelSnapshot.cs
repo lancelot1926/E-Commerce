@@ -111,6 +111,8 @@ namespace Ecommerce.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Orders");
                 });
 
@@ -229,6 +231,9 @@ namespace Ecommerce.Infrastructure.Persistence.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<bool>("IsBanned")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -255,6 +260,9 @@ namespace Ecommerce.Infrastructure.Persistence.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<int>("TokenVersion")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -279,9 +287,20 @@ namespace Ecommerce.Infrastructure.Persistence.Migrations
                         .HasForeignKey("CartId1");
                 });
 
+            modelBuilder.Entity("Ecommerce.Domain.Entities.Order", b =>
+                {
+                    b.HasOne("Ecommerce.Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Ecommerce.Domain.Entities.OrderItem", b =>
                 {
-                    b.HasOne("Ecommerce.Domain.Entities.Order", null)
+                    b.HasOne("Ecommerce.Domain.Entities.Order", "Order")
                         .WithMany()
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -290,6 +309,8 @@ namespace Ecommerce.Infrastructure.Persistence.Migrations
                     b.HasOne("Ecommerce.Domain.Entities.Order", null)
                         .WithMany("Items")
                         .HasForeignKey("OrderId1");
+
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("Ecommerce.Domain.Entities.User", b =>

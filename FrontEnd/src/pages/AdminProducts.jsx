@@ -6,6 +6,7 @@ export default function AdminProducts() {
   const [items, setItems] = useState([]);
   const [q, setQ] = useState("");
   const [err, setErr] = useState("");
+  const [deletingId, setDeletingId] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -13,6 +14,19 @@ export default function AdminProducts() {
       .then(res => setItems(res.data))
       .catch(e => setErr(e.response?.data?.error || e.message));
   }, []);
+
+  const handleDelete = async (id) => {
+    if (!window.confirm("Delete this product?")) return;
+    setDeletingId(id);
+    try {
+      await api.delete(`/products/${id}`);
+      setItems(prev => prev.filter(p => p.id !== id)); // remove from UI
+    } catch (e) {
+      setErr(e.response?.data?.error || e.message);
+    } finally {
+      setDeletingId(null);
+    }
+  };
 
   const filtered = q
     ? items.filter(p => (p.name || "").toLowerCase().includes(q.toLowerCase()))
@@ -67,6 +81,13 @@ export default function AdminProducts() {
                 <td className="text-end">
                   <Link to={`/product/${p.id}`} className="btn btn-outline-secondary me-2">View</Link>
                   <Link to={`/admin/products/${p.id}/edit`} className="btn btn-primary">Edit</Link>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => handleDelete(p.id)}
+                    disabled={deletingId === p.id}
+                  >
+                    {deletingId === p.id ? "Deleting…" : "Delete"}
+                  </button>
                 </td>
               </tr>
             ))}

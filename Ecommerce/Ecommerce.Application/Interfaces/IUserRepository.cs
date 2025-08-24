@@ -14,4 +14,5 @@ public interface IUserRepository
     Task<User?> GetByEmailAsync(string email, CancellationToken ct = default);
     Task<int> AddAsync(User entity, CancellationToken ct = default);
     Task UpdateAsync(User entity, CancellationToken ct = default);
+    Task<IReadOnlyList<User>> GetAllAsync(CancellationToken ct = default);
 }

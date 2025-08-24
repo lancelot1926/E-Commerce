@@ -127,6 +127,37 @@
   },
   {
     "ContainingType": "Ecommerce.Api.Controllers.OrdersController",
+    "Method": "StateUpdate",
+    "RelativePath": "api/Orders/{id}/state",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "body",
+        "Type": "Ecommerce.Api.Controllers.OrdersController\u002BStatRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecommerce.Api.Controllers.OrdersController",
+    "Method": "GetAll",
+    "RelativePath": "api/Orders/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecommerce.Api.Controllers.OrdersController",
     "Method": "Checkout",
     "RelativePath": "api/Orders/checkout",
     "HttpMethod": "POST",
@@ -289,6 +320,37 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecommerce.Api.Controllers.UsersController",
+    "Method": "BanTheUser",
+    "RelativePath": "api/Users/{id}/ban",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "body",
+        "Type": "Ecommerce.Api.Controllers.UsersController\u002BBanRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Ecommerce.Api.Controllers.UsersController",
+    "Method": "GetAll",
+    "RelativePath": "api/Users/userList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

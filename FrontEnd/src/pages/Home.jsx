@@ -18,8 +18,12 @@ export default function Home() {
   }, []);
 
   const addToCart = async (p) => {
-    await cartAddOrUpdate({ id: p.id, name: p.name, price: p.price }, 1);
-  alert("Added to cart");
+    try {
+    await cartAddOrUpdate(p, 1);
+    alert("Added to cart");
+  } catch (err) {
+    alert(err.message || "Could not add to cart");
+  }
   };
 
   if (loading) return <div className="container py-4">Loading…</div>;
@@ -40,7 +44,9 @@ export default function Home() {
                   <div className="fw-bold">₺{p.price}</div>
                   <div>
                     <Link to={`/product/${p.id}`} className="btn btn-outline-secondary me-2">Details</Link>
-                    <button className="btn btn-primary" onClick={() => addToCart(p)}>Add</button>
+                    <button className="btn btn-primary" onClick={() => addToCart(p)} disabled={p.stockQuantity <= 0}>
+                      {p.stockQuantity <= 0 ? "Out of stock" : "Add"}
+                    </button>
                   </div>
                 </div>
               </div>

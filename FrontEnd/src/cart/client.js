@@ -39,6 +39,7 @@ export async function cartGet() {
 export async function cartAddOrUpdate(product, qtyDelta = 1) {
   // Guest mode
   if (!isLoggedIn()) {
+    // guest path unchanged
     const items = readGuest();
     const i = items.findIndex(it => it.id === product.id);
     if (i >= 0) items[i].qty = Math.max(1, items[i].qty + qtyDelta);
@@ -46,16 +47,24 @@ export async function cartAddOrUpdate(product, qtyDelta = 1) {
     writeGuest(items);
     return items;
   }
-
-  // Logged-in: read current, compute NEW absolute qty, then call cartSetQty
-  const current = await cartGet();
-  const curQty = current.find(i => i.id === product.id)?.qty ?? 0;
-  const newQty = Math.max(1, curQty + qtyDelta);
-  // 🔴 POST ABSOLUTE quantity
-  await api.post("/cart/items", { productId: product.id, quantity: newQty });
-
-  const { data } = await api.get("/cart");
-  return normalizeServerItems(data);
+  try {
+    const current = await cartGet();
+    const cur = current.find(i => i.id === product.id)?.qty ?? 0;
+    const newQty = Math.max(1, cur + qtyDelta);
+    await api.post("/cart/items", { productId: product.id, quantity: newQty });  // ABSOLUTE qty
+    const { data } = await api.get("/cart");
+    return normalizeServerItems(data);
+  } catch (e) {
+    if (e.response?.status === 401) {
+      localStorage.removeItem("token");
+      return cartAddOrUpdate(product, qtyDelta);
+    }
+    // 👇 turn 400 into a friendly error
+    if (e.response?.status === 400) {
+      throw new Error(e.response?.data?.error || "Could not add to cart");
+    }
+    throw e;
+  }
 }
 
 export async function cartSetQty(productId, qty) {
@@ -64,17 +73,25 @@ export async function cartSetQty(productId, qty) {
   if (!isLoggedIn()) {
     const items = readGuest();
     const i = items.findIndex(it => it.id === productId);
-    if (i >= 0) items[i].qty = qty;
-    else items.push({ id: productId, name: "", price: 0, qty });
+    if (i >= 0) items[i].qty = qty; else items.push({ id: productId, name: "", price: 0, qty });
     writeGuest(items);
     return items;
   }
-
-  // 🔴 POST ABSOLUTE quantity
-  await api.post("/cart/items", { productId, quantity: qty });
-
-  const { data } = await api.get("/cart");
-  return normalizeServerItems(data);
+  try {
+    await api.post("/cart/items", { productId, quantity: qty });
+    const { data } = await api.get("/cart");
+    return normalizeServerItems(data);
+  } catch (e) {
+    if (e.response?.status === 401) {
+      localStorage.removeItem("token");
+      return cartSetQty(productId, qty);
+    }
+    // 👇 surface stock message on 400
+    if (e.response?.status === 400) {
+      throw new Error(e.response?.data?.error || "Could not update quantity");
+    }
+    throw e;
+  }
 }
 
 export async function cartRemove(productId) {

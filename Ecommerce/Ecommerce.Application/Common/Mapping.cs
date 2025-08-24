@@ -37,6 +37,7 @@ public static class Mapping
         Surname = u.Surname,
         Email = u.Email,
         PhoneNumber = u.PhoneNumber,
+        IsBanned = u.IsBanned,
         AddressLine1 = u.Address?.Line1,
         AddressLine2 = u.Address?.Line2,
         City = u.Address?.City,
@@ -87,6 +88,7 @@ public static class Mapping
             ProductName = i.ProductName,
             UnitPrice = i.UnitPrice,
             Quantity = i.Quantity
-        }).ToList()
+        }).ToList(),
+        Customer = o.User != null ? o.User.ToDto() : null,
     };
 }

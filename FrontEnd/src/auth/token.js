@@ -1,6 +1,6 @@
-export function getToken() {
-  return localStorage.getItem("token");
-}
+export function getToken() {return localStorage.getItem("token");}
+export const setToken = (t) => localStorage.setItem("token", t);
+export const clearToken = () => localStorage.removeItem("token");
 
 export function getUserIdFromToken() {
   const t = getToken();
@@ -34,3 +34,13 @@ export function isAdmin() {
   const r = getRoleFromToken();
   return r === "Admin" || (Array.isArray(r) && r.includes("Admin"));
 }
+
+
+export const logout = (reason) => {
+  clearToken();
+  // broadcast to other tabs (optional)
+  localStorage.setItem("force-logout", Date.now().toString());
+  // pass reason to login page
+  const q = reason ? `?reason=${encodeURIComponent(reason)}` : "";
+  window.location.assign(`/login${q}`);
+};

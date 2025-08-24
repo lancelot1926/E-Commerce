@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { cartGet, cartSetQty, cartRemove, cartClear, cartAddOrUpdate } from "../cart/client";
+import { checkout } from "../orders/client";
 
 export default function Cart() {
   const [items, setItems] = useState([]);
@@ -10,21 +11,47 @@ export default function Cart() {
 
   const inc = async (id) => {
     const p = items.find(i => i.id === id);
+    if (!p) return;
+  try {
     await cartAddOrUpdate({ id, name: p.name, price: p.price }, 1);
-    await refresh();
-  };
+    
+  } catch (err) {
+    const msg = err.response?.data?.error || err.message || "Could not increase quantity";
+    alert(msg);
+  }
+  await refresh();
+};
   const dec = async (id) => {
     const p = items.find(i => i.id === id);
+    if (!p) return;
     if (p.qty > 1) {
-      await cartAddOrUpdate({ id, name: p.name, price: p.price }, -1);
-      await refresh();
+      try {
+    await cartAddOrUpdate({ id, name: p.name, price: p.price }, -1);
+    
+  } catch (err) {
+    const msg = err.response?.data?.error || err.message || "Could not decrease quantity";
+      alert(msg);
+  }   
     }
+    await refresh();
   };
   const setQty = async (id, q) => { await cartSetQty(id, q); await refresh(); };
   const remove = async (id) => { await cartRemove(id); await refresh(); };
   const clear = async () => { await cartClear(); await refresh(); };
 
   const total = items.reduce((s, i) => s + i.price * i.qty, 0);
+
+  const doCheckout = async () => {
+  try {
+    const order = await checkout();  // POST /orders/checkout
+    // server already cleared the cart; refresh UI
+    await refresh();
+    // go to details page
+    window.location.href = `/orders/${order.id}`;
+  } catch (e) {
+    alert(e.response?.data?.error || e.message || "Checkout failed");
+  }
+};
 
   return (
     <div className="container py-4">
@@ -53,7 +80,7 @@ export default function Cart() {
           <h4 className="m-0">Total: ₺{total.toFixed(2)}</h4>
           <div>
             <button className="btn btn-outline-danger me-2" onClick={clear}>Clear</button>
-            <button className="btn btn-success" disabled>Checkout (coming soon)</button>
+            <button className="btn btn-success" onClick={doCheckout} disabled={!items.length}>Checkout</button>
           </div>
         </div>
       )}

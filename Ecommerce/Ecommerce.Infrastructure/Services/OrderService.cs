@@ -61,13 +61,14 @@ public class OrderService : IOrderService
         // clear cart
         _db.CartItems.RemoveRange(items);
         await _db.SaveChangesAsync(ct);
+        await _db.Entry(order).Reference(o => o.User).LoadAsync(ct);
 
         return Result<OrderDto>.Ok(order.ToDto());
     }
 
     public async Task<Result<OrderDto>> GetAsync(int id, int userId, CancellationToken ct = default)
     {
-        var order = await _db.Orders.Include(o => o.Items).FirstOrDefaultAsync(o => o.Id == id && o.UserId == userId, ct);
+        var order = await _db.Orders.Include(o => o.Items).Include(o=>o.User).FirstOrDefaultAsync(o => o.Id == id && o.UserId == userId, ct);
         if (order is null) return Result<OrderDto>.Fail("Order not found.");
         return Result<OrderDto>.Ok(order.ToDto());
     }
@@ -75,10 +76,56 @@ public class OrderService : IOrderService
     public async Task<Result<IReadOnlyList<OrderDto>>> ListAsync(int userId, CancellationToken ct = default)
     {
         var list = await _db.Orders.AsNoTracking().Include(o => o.Items)
+            .Include(o => o.User)
             .Where(o => o.UserId == userId)
             .OrderByDescending(o => o.Id)
             .ToListAsync(ct);
 
         return Result<IReadOnlyList<OrderDto>>.Ok(list.Select(o => o.ToDto()).ToList());
+    }
+
+    public async Task<Result<List<OrderDto>>>GetAllAsync(CancellationToken ct = default)
+    {
+        var orders=await _db.Orders.Include(o=>o.Items).Include(o => o.User).OrderByDescending(o => o.Id).ToListAsync(ct);
+        var dto = orders.Select(o => new OrderDto
+        {
+            Id = o.Id,
+            UserId = o.UserId,
+            Status = o.Status,
+            Total = o.Items.Sum(i => i.UnitPrice * i.Quantity),
+            Customer = o.User != null ? o.User.ToDto() : null,
+            Items = o.Items.Select(i => new OrderItemDto
+            {
+                ProductId = i.ProductId,
+                ProductName = i.ProductName,
+                UnitPrice = i.UnitPrice,
+                Quantity = i.Quantity
+            }).ToList()
+        }).ToList();
+
+        return Result<List<OrderDto>>.Ok(dto);
+    }
+
+    //For Admin
+    public async Task<Result<OrderDto>> GetByIdAsync(int id, CancellationToken ct = default)
+    {
+        var order = await _db.Orders
+            .Include(o=>o.User)
+            .Include(o => o.Items)
+            .FirstOrDefaultAsync(o => o.Id == id, ct);
+        if (order == null) return Result<OrderDto>.Fail("Order not found.");
+        return Result<OrderDto>.Ok(order.ToDto());
+    }
+
+    public async Task<Result<OrderDto>> ChangeStateAsync(int id,int state, CancellationToken ct = default)
+    {
+        if(!Enum.IsDefined(typeof(OrderStatus),state)) return Result<OrderDto>.Fail("Invalid state value.");
+        var order = await _db.Orders.FirstOrDefaultAsync(o => o.Id == id, ct);
+        if (order is null) return Result<OrderDto>.Fail("Order not found.");
+        order.Status = (OrderStatus)state;
+        order.UpdatedAt = DateTime.Now;
+
+        await _db.SaveChangesAsync(ct);
+        return Result<OrderDto>.Ok(order.ToDto());
     }
 }

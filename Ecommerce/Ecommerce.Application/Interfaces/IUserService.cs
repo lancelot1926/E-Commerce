@@ -15,4 +15,6 @@ public interface IUserService
     Task<Result<string>> LoginAsync(LoginRequest request, CancellationToken ct = default);
     // string will be a JWT later
     Task<Result<UserDto>> GetByIdAsync(int id, CancellationToken ct = default);
+    Task<Result<IReadOnlyList<UserDto>>>GetAllAsync(CancellationToken ct = default);
+    Task<Result<UserDto>> BanAsync(int id, bool banned, CancellationToken ct = default);
 }

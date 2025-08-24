@@ -12,6 +12,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [err, setErr] = useState("");
   const navigate = useNavigate();
+  const reason = useState(() => new URLSearchParams(navigate).get("reason"), [navigate]);
 
   const submit = async (e) => {
     e.preventDefault();
@@ -32,6 +33,7 @@ export default function Login() {
 
   return (
     <div className="container py-4" style={{maxWidth: 420}}>
+      {reason && <div className="alert alert-warning mb-3">{reason}</div>}
       <h1 className="mb-3">Login</h1>
       {err && <div className="alert alert-danger">{err}</div>}
       <form onSubmit={submit}>

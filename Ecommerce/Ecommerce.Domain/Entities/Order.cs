@@ -16,6 +16,7 @@ public class Order : BaseEntity
     public OrderStatus Status { get; set; } = OrderStatus.Pending;
     public decimal Total { get; set; }
     public List<OrderItem> Items { get; set; } = new();
+    public User User { get; set; } = default!;
 }
 
 public class OrderItem : BaseEntity

@@ -41,4 +41,7 @@ public class User : BaseEntity
         UpdatedAt = DateTime.UtcNow;
     }
     public string Role { get; set; } = "User"; // default role
+
+    public bool IsBanned { get; set; }=false;
+    public int TokenVersion { get; set; } = 0;
 }
