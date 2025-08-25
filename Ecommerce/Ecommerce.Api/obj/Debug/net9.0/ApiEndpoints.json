@@ -167,6 +167,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PaymentsController",
+    "Method": "Callback",
+    "RelativePath": "api/payments/iyzico/callback",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "orderId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaymentsController",
+    "Method": "Start",
+    "RelativePath": "api/payments/iyzico/start",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PaymentsController\u002BStartPaymentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Ecommerce.Api.Controllers.ProductsController",
     "Method": "GetAll",
     "RelativePath": "api/Products",

@@ -79,6 +79,9 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Order>(b =>
         {
             b.Property(o => o.Total).HasColumnType("decimal(18,2)");
+            b.Property(o => o.PaymentId)
+     .HasMaxLength(64)          // or whatever
+     .IsRequired(false);        // <-- important
             b.HasMany<OrderItem>().WithOne(oi => oi.Order).HasForeignKey(oi => oi.OrderId).OnDelete(DeleteBehavior.Cascade);
         });
 

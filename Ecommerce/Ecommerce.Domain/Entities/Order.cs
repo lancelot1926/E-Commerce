@@ -17,6 +17,7 @@ public class Order : BaseEntity
     public decimal Total { get; set; }
     public List<OrderItem> Items { get; set; } = new();
     public User User { get; set; } = default!;
+    public string? PaymentId { get; set; }
 }
 
 public class OrderItem : BaseEntity

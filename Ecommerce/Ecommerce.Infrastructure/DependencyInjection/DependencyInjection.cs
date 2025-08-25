@@ -44,6 +44,8 @@ public static class DependencyInjection
         services.Configure<JwtSettings>(config.GetSection("Jwt"));
         services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 
+        services.Configure<IyzicoSettings>(config.GetSection("Iyzico"));
+        services.AddScoped<IPaymentService, IyzicoPaymentService>();
 
         return services;
     }

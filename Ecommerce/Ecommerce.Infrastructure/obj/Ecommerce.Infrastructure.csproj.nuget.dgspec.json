@@ -191,6 +191,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Iyzipay": {
+              "target": "Package",
+              "version": "[2.1.67, )"
+            },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.3.1, )"

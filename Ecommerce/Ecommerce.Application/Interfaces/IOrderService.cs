@@ -17,4 +17,6 @@ public interface IOrderService
     Task<Result<List<OrderDto>>> GetAllAsync(CancellationToken ct = default);
     Task<Result<OrderDto>> GetByIdAsync(int id, CancellationToken ct = default);
     Task<Result<OrderDto>> ChangeStateAsync(int id, int state, CancellationToken ct = default);
+    Task<bool> FinalizeOrderAfterPaymentAsync(int orderId, string paymentId, CancellationToken ct = default);
+    Task FailOrderAsync(int orderId, CancellationToken ct = default);
 }
